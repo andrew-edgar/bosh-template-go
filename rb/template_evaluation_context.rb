@@ -48,6 +48,7 @@ if $0 == __FILE__
           )
         end
       end
+      puts "ANDREW add a new link for ", name
       links << Bosh::Template::Test::Link.new(
         name: name,
         address: link['address'],
