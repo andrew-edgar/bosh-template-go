@@ -1,4 +1,4 @@
-module github.com/viovanov/bosh-template-go
+module github.com/andrew-edgar/bosh-template-go
 
 go 1.12
 
