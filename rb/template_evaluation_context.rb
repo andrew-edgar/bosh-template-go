@@ -48,6 +48,7 @@ if $0 == __FILE__
           )
         end
       end
+      puts "links is now : #{links}"
       links << Bosh::Template::Test::Link.new(
         name: name,
         address: link['address'],
