@@ -68,9 +68,9 @@ func (e *ERBRenderer) Render(inputFilePath, outputFilePath string) (returnErr er
 		return errors.Wrap(err, "failed to create temporary directory in erb renderer")
 	}
 	defer func() {
-		if err = os.RemoveAll(tmpDir); err != nil {
-			returnErr = errors.Wrap(err, "failed to cleanup erb renderer temporary directory")
-		}
+		// if err = os.RemoveAll(tmpDir); err != nil {
+		// 	returnErr = errors.Wrap(err, "failed to cleanup erb renderer temporary directory")
+		// }
 	}()
 
 	// Write the ruby class to a file
