@@ -35,18 +35,18 @@ if $0 == __FILE__
   links = []
   if context_hash['properties'] && context_hash['properties']['quarks'] && context_hash['properties']['quarks']['consumes']
     context_hash['properties']['quarks']['consumes'].each_pair do |name, link|
-      next if link['instances'].empty?
-
       instances = []
-      link['instances'].each do |link_instance|
-        instances << Bosh::Template::Test::InstanceSpec.new(
-          address:   link_instance['address'],
-          az:        link_instance['az'],
-          bootstrap: link_instance['bootstrap'],
-          id:        link_instance['id'],
-          index:     link_instance['index'],
-          name:      link_instance['name'],
-        )
+      if link['instances'].empty?
+        link['instances'].each do |link_instance|
+          instances << Bosh::Template::Test::InstanceSpec.new(
+            address:   link_instance['address'],
+            az:        link_instance['az'],
+            bootstrap: link_instance['bootstrap'],
+            id:        link_instance['id'],
+            index:     link_instance['index'],
+            name:      link_instance['name'],
+          )
+        end
       end
       links << Bosh::Template::Test::Link.new(
         name: name,
