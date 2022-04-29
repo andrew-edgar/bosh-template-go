@@ -1,6 +1,7 @@
 require "bosh/template"
 require "erb"
 require "fileutils"
+require "ipaddr"
 require "json"
 require "yaml"
 
