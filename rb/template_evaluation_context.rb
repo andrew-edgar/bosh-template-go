@@ -2,6 +2,7 @@ require "bosh/template"
 require "erb"
 require "fileutils"
 require "ipaddr"
+require "openssl"
 require "json"
 require "yaml"
 
